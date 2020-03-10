@@ -7,7 +7,7 @@
     "type": "flarum-extension",
     "license": "MIT",
     "require": {
-        "flarum/core": ">=0.1.0-beta.11 <0.1.0-beta.13"
+        "flarum/core": ">=0.1.0-beta.11 <0.1.0-beta.14"
     },
     "authors": [
         {
@@ -26,7 +26,7 @@
             "title": "Create User Modal",
             "icon": {
                 "name": "fas fa-user-plus",
-                "backgroundColor": "#d13e32",
+                "backgroundColor": "#684ba6",
                 "color": "#fff"
             }
         },

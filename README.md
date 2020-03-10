@@ -26,3 +26,4 @@ A permission allows you to customize who sees the "Create new user" button.
 
 - [GitHub](https://github.com/clarkwinkelmann/flarum-ext-create-user-modal)
 - [Packagist](https://packagist.org/packages/clarkwinkelmann/flarum-ext-create-user-modal)
+- [Discuss](https://discuss.flarum.org/d/22608)
