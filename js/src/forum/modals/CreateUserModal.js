@@ -12,8 +12,8 @@ export default class CreateUserModal extends SignUpModal {
         if (items.has('submit')) {
             const vdom = items.get('submit');
 
-            if (vdom && Array.isArray(vdom.children) && vdom.children.length > 0 && vdom.children[0] && vdom.children[0].props) {
-                vdom.children[0].props.children = [
+            if (vdom && Array.isArray(vdom.children) && vdom.children.length > 0 && vdom.children[0]) {
+                vdom.children[0].children = [
                     app.translator.trans('clarkwinkelmann-create-user-modal.forum.modal.submit'),
                 ];
             }
@@ -38,7 +38,7 @@ export default class CreateUserModal extends SignUpModal {
         app.request({
             url: app.forum.attribute('apiUrl') + '/users',
             method: 'POST',
-            data: {
+            body: {
                 data: {
                     attributes: this.submitData(),
                 },
@@ -58,7 +58,7 @@ export default class CreateUserModal extends SignUpModal {
                     },
                 });
 
-                m.route(app.route.user(user));
+                m.route.set(app.route.user(user));
             },
             this.loaded.bind(this)
         );

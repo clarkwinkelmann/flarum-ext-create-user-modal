@@ -15,13 +15,12 @@ app.initializers.add('clarkwinkelmann-create-user-modal', () => {
         }
 
         items.add('clarkwinkelmann-create-user-modal', Button.component({
-            children: app.translator.trans('clarkwinkelmann-create-user-modal.forum.link'),
             icon: 'fas fa-user-plus',
             className: 'Button',
             onclick: () => {
-                app.modal.show(new CreateUserModal());
+                app.modal.show(CreateUserModal);
             },
-        }), 10);
+        }, app.translator.trans('clarkwinkelmann-create-user-modal.forum.link')), 10);
     }
 
     if (userDirectory && userDirectory.UserDirectoryPage) {
