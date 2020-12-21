@@ -1,17 +1,16 @@
-import {extend, override} from 'flarum/extend';
+import {override} from 'flarum/extend';
 import app from 'flarum/app';
-import PermissionGrid from 'flarum/components/PermissionGrid';
 import PermissionDropdown from 'flarum/components/PermissionDropdown';
 
 app.initializers.add('clarkwinkelmann-create-user-modal', () => {
-    extend(PermissionGrid.prototype, 'viewItems', function (items) {
-        items.add('clarkwinkelmann-create-user-modal', {
+    app.extensionData
+        .for('clarkwinkelmann-create-user-modal')
+        .registerPermission({
             icon: 'fas fa-user-plus',
             label: app.translator.trans('clarkwinkelmann-create-user-modal.admin.permissions.view'),
             permission: 'clarkwinkelmann.createUserModal',
             allowGuest: true,
-        });
-    });
+        }, 'view');
 
     override(PermissionDropdown.prototype, 'isGroupDisabled', function (original, id) {
         // If it's not our permission, let the normal flow continue
