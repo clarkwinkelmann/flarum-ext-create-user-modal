@@ -1,6 +1,6 @@
-import {override} from 'flarum/extend';
-import app from 'flarum/app';
-import PermissionDropdown from 'flarum/components/PermissionDropdown';
+import {override} from 'flarum/common/extend';
+import app from 'flarum/admin/app';
+import PermissionDropdown from 'flarum/admin/components/PermissionDropdown';
 
 app.initializers.add('clarkwinkelmann-create-user-modal', () => {
     app.extensionData

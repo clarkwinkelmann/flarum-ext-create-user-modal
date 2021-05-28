@@ -1,5 +1,5 @@
-import app from 'flarum/app';
-import SignUpModal from 'flarum/components/SignUpModal';
+import app from 'flarum/forum/app';
+import SignUpModal from 'flarum/forum/components/SignUpModal';
 
 export default class CreateUserModal extends SignUpModal {
     title() {

@@ -1,7 +1,7 @@
-import {extend} from 'flarum/extend';
-import app from 'flarum/app';
-import Button from 'flarum/components/Button';
-import SessionDropdown from 'flarum/components/SessionDropdown';
+import {extend} from 'flarum/common/extend';
+import app from 'flarum/forum/app';
+import Button from 'flarum/common/components/Button';
+import SessionDropdown from 'flarum/forum/components/SessionDropdown';
 import CreateUserModal from './modals/CreateUserModal';
 
 /* global flarum */
