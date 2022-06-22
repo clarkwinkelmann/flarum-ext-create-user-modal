@@ -1,15 +1,18 @@
 import {extend} from 'flarum/common/extend';
 import app from 'flarum/forum/app';
 import Button from 'flarum/common/components/Button';
+import ItemList from 'flarum/common/utils/ItemList';
 import SessionDropdown from 'flarum/forum/components/SessionDropdown';
 import CreateUserModal from './modals/CreateUserModal';
 
-/* global flarum */
+export {
+    CreateUserModal,
+};
 
 app.initializers.add('clarkwinkelmann-create-user-modal', () => {
-    const userDirectory = flarum.extensions['fof-user-directory'];
+    const userDirectory: any = flarum.extensions['fof-user-directory'];
 
-    function addButton(items) {
+    function addButton(items: ItemList<any>) {
         if (!app.forum.attribute('clarkwinkelmannCreateUserModal')) {
             return;
         }

@@ -1,9 +1,34 @@
 import app from 'flarum/forum/app';
 import SignUpModal from 'flarum/forum/components/SignUpModal';
+import LogInButtons from 'flarum/forum/components/LogInButtons';
 
 export default class CreateUserModal extends SignUpModal {
     title() {
         return app.translator.trans('clarkwinkelmann-create-user-modal.forum.modal.title');
+    }
+
+    className(): string {
+        return super.className() + ' CreateUserModal';
+    }
+
+    content() {
+        // Same as original but without .Modal-footer
+        // We don't need to override the this.footer() method, it will just never be called
+        return [
+            m('.Modal-body', this.body()),
+        ];
+    }
+
+    body(): (false | JSX.Element)[] {
+        return super.body().filter(element => {
+            // If the element is the LogInButtons, remove it
+            if (element && element.tag === LogInButtons) {
+                return false;
+            }
+
+            // Otherwise keep everything else verbatim, even null/false/etc
+            return true;
+        });
     }
 
     fields() {
@@ -20,11 +45,6 @@ export default class CreateUserModal extends SignUpModal {
         }
 
         return items;
-    }
-
-    // Hide the footer completely
-    footer() {
-        return null;
     }
 
     // Instead of hitting /register (which would change which user is connected in this session)
