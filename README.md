@@ -26,7 +26,9 @@ A permission allows you to customize who sees the "Create new user" button.
 
 You can manually bring up the modal by calling
 
-    app.modal.show(flarum.extensions['clarkwinkelmann-create-user-modal'].CreateUserModal) 
+```js
+app.modal.show(flarum.extensions['clarkwinkelmann-create-user-modal'].CreateUserModal) 
+```
 
 You will only be able to submit it if you have the correct permissions though.
 
