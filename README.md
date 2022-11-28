@@ -9,7 +9,7 @@ The other benefit is that it's possible to access it when signup is closed right
 Technically admins could also open the Sign Up modal and use it, but it requires using the browser console.
 
 If the User Directory extension is enabled, the link is added to the top of the user list.
-Otherwise the link is added to the session dropdown.
+Otherwise, the link is added to the session dropdown.
 
 This extension does not alter the Flarum core logic regarding the creation of users.
 When signup is enabled, anybody can create accounts.

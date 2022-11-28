@@ -14,7 +14,7 @@ app.initializers.add('clarkwinkelmann-create-user-modal', () => {
 
     override(PermissionDropdown.prototype, 'isGroupDisabled', function (original, id) {
         // If it's not our permission, let the normal flow continue
-        if (this.attrs.permission !== 'clarkwinkelmann.createUserModal') {
+        if ((this.attrs as any).permission !== 'clarkwinkelmann.createUserModal') {
             return original(id);
         }
 
